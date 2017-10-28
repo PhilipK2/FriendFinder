@@ -25,14 +25,12 @@ module.exports = function(app) {
 
         // Examine all existing friends in the list
         for (var i = 0; i < friends.length; i++) {
-
             // Compute differenes for each question
             var diff = 0;
             for (var j = 0; j < userResponses.length; j++) {
                 diff += Math.abs(friends[i].scores[j] - userResponses[j]);
             }
             console.log('diff = ' + diff);
-
             // If lowest difference, record the friend match
             if (diff < totalDifference) {
                 totalDifference = diff;
@@ -41,7 +39,6 @@ module.exports = function(app) {
             }
         }
 
-        // Add new user
         friends.push(userData);
 
         // Send appropriate response
